@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <section>
+        <section>
+    <div class="content_wrapper" id="app">
+        <div v-if="infos.city">
+        
+            <h1>
+                Weather
+                <div class="date">{{today}}</div>
+            </h1>
+            
+			<br>
+			<form method='get'>
+				<label>Name of the City:</label><br>
+				<input type="text" name="city" placeholder="Enter a City Name"><br><br>
+               
+				<input style="background-color:green;color:white;" type="submit" value="Submit">
+                
+			  </form> 
+			  <br>
+			  
+            <div class="weather_card">
+              <div class="weather_card_img">
+                    <div class="weather_card_state">
+                        <span class="material-icons">  </span>
+                        <span class="material-icons">
+							{% comment %} {{resp.weatherIcon}} {% endcomment %}
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="weather_card_infos">
+                    <div class="weather_card_infos_title">
+						{{resp.city}}, {{resp.country}}
+                      
+                    </div>
+                    <div class="weather_card_infos_temp">
+						{{resp.celcius}}°C / {{resp.kelvin}}°K
+                    </div>
+                    <div class="bottom">
+                       
+                        <div class="weather_card_infos_bottom">
+							Weather: {{resp.weather}}
+                        </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+</body>
+</html>
+{% endblock %}
